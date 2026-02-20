@@ -1,42 +1,26 @@
-# StrongSORT yolo_multi_model
 
-<br>
-<img src="https://media0.giphy.com/media/J19OSJKmqCyP7Mfjt1/giphy.gif" width="80" height="30" />    
-<h2>yolo_multi_model </h2>
+# StrongSORT YOLOv8 Multi-Object Tracking
 
-For an all-in-one Python file that can run detection, segmentation, and pose estimation with various YOLO models (such as YOLOv5, YOLOv7, YOLOv8, and YOLOv11), you should choose a name that clearly reflects the functionality and the models used, while being concise. includes detection, segmentation, and pose estimation) using different YOLO models.
+## Output Demo
+![Tracking Output](yashgym_output.gif)
 
-![yolo_multi_model](demo_yoloV8.gif)
+## What this does
+- Real-time multi-object tracking using YOLOv8 + StrongSORT
+- Tested on custom gym video
+- Supports detection, segmentation and pose estimation
 
-
-![yolo_multi_model](pose_output.gif)
-
-
+## How to Run
 ```bash
-## recommended conda env python=3.10
-## pip install ultralytics -U
-$ python yolo_multi_model.py --source 0 1 vid1.mp4 vid2.mp4 --track --count
-
+pip install ultralytics -U
+python yolo_multi_model.py --source yourvideo.mp4 --track --count
 ```
 
+## Observations
+- Successfully tracked multiple persons with unique IDs
+- Observed occlusion based ID switching when persons overlapped
+- Same person got different ID after being hidden behind another person
 
-
-
-## Acknowledgements
-
-<details><summary> <b>Expand</b> </summary>
-
-* [https://github.com/AlexeyAB/darknet](https://github.com/AlexeyAB/darknet)
-* [https://github.com/WongKinYiu/yolor](https://github.com/WongKinYiu/yolor)
-* [https://github.com/WongKinYiu/PyTorch_YOLOv4](https://github.com/WongKinYiu/PyTorch_YOLOv4)
-* [https://github.com/WongKinYiu/ScaledYOLOv4](https://github.com/WongKinYiu/ScaledYOLOv4)
-* [https://github.com/Megvii-BaseDetection/YOLOX](https://github.com/Megvii-BaseDetection/YOLOX)
-* [https://github.com/ultralytics/yolov3](https://github.com/ultralytics/yolov3)
-* [https://github.com/ultralytics/yolov5](https://github.com/ultralytics/yolov5)
-* [https://github.com/DingXiaoH/RepVGG](https://github.com/DingXiaoH/RepVGG)
-* [https://github.com/JUGGHM/OREPA_CVPR2022](https://github.com/JUGGHM/OREPA_CVPR2022)
-* [https://github.com/TexasInstruments/edgeai-yolov5/tree/yolo-pose](https://github.com/TexasInstruments/edgeai-yolov5/tree/yolo-pose)
-* [https://github.com/ultralytics/ultralytics](https://github.com/ultralytics/ultralytics)
-
-</details>
-
+## Tech Stack
+- YOLOv8 for object detection
+- StrongSORT for multi-object tracking
+- Python, OpenCV, PyTorch
